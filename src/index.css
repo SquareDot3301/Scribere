@@ -51,6 +51,7 @@ body {
 }
 .button:hover {
   background: linear-gradient(#fff, #222);
+  transition: 0.3s;
 }
 .fileName {
   background-color: transparent;

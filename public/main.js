@@ -1,13 +1,12 @@
-const { app, BrowserWindow, autoUpdater, dialog } = require("electron");
+const { app, BrowserWindow } = require("electron");
 require("electron-remote");
 const path = require("path");
 const isDev = require("electron-is-dev");
-require("update-electron-app")();
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 900,
+    height: 700,
     icon: "./logo.png",
     webPreferences: {
       enableRemoteModule: true,
