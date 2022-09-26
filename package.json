@@ -1,9 +1,8 @@
 {
   "name": "scribere",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Scribere",
   "productName": "Scribere",
-  "CSC_IDENTITY_AUTO_DISCOVERY": false,
   "repository": "https://github.com/MaelDevFr/markdown-editor",
   "private": true,
   "main": "public/main.js",
@@ -58,21 +57,33 @@
     ],
     "mac": {
       "publish": [
-        "github"
+        {
+          "provider": "github",
+          "owner": "MaelDevFr",
+          "repo": "Scribere"
+        }
       ],
       "icon": "./public/logo.icns"
     },
     "win": {
       "publish": [
-        "github"
+        {
+          "provider": "github",
+          "owner": "MaelDevFr",
+          "repo": "Scribere"
+        }
       ],
       "icon": "./public/logo.ico"
     },
     "linux": {
       "publish": [
-        "github"
+        {
+          "provider": "github",
+          "owner": "MaelDevFr",
+          "repo": "Scribere"
+        }
       ],
-      "icon": "./public.logo.png"
+      "icon": "./public/logo.png"
     }
   },
   "eslintConfig": {

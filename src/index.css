@@ -51,11 +51,24 @@ body {
 }
 .button:hover {
   background: linear-gradient(#fff, #222);
-  transition: 0.3s;
 }
 .fileName {
   background-color: transparent;
   color: #fff;
   border-radius: 10px;
   width: 180px;
+}
+.button-edit-markdown {
+  border-radius: 10px;
+  height: 30px;
+  width: 60px;
+  background-color: transparent;
+  color: #fff;
+}
+.button-edit-markdown:hover {
+  background: linear-gradient(#fff, #222);
+}
+.edit {
+  display: flex;
+  justify-content: center;
 }

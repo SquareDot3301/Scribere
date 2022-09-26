@@ -34,8 +34,97 @@ function App() {
 
     FileSaver.saveAs(blobFile, fileName);
   }
+  function bold() {
+    setMarkDownText("**Scribere**");
+  }
+  function italic() {
+    setMarkDownText("*Scribere*");
+  }
+  function first() {
+    setMarkDownText("# Scribere");
+  }
+  function scnd() {
+    setMarkDownText("## Scribere");
+  }
+  function third() {
+    setMarkDownText("### Scribere");
+  }
+  function four() {
+    setMarkDownText("#### Scribere");
+  }
+  function five() {
+    setMarkDownText("##### Scribere");
+  }
+  function six() {
+    setMarkDownText("###### Scribere");
+  }
+  function link() {
+    setMarkDownText("[link](https://github.com/MaelDevFr)");
+  }
+  function list() {
+    setMarkDownText("- Scribere\n- MaelDevFr");
+  }
+  function img() {
+    setMarkDownText("![Img](img.png)");
+  }
+  function barred() {
+    setMarkDownText("~~Scribere~~");
+  }
+  function array() {
+    setMarkDownText(
+      "|cellule 1|cellule 2|\n|--------|--------|\n|    A    |    B    |"
+    );
+  }
+  function lineBreak(e) {
+    setMarkDownText(markdownText + "   \n");
+  }
   return (
     <div className="App">
+      <div className="edit">
+        <button onClick={bold} className="button-edit-markdown">
+          Bold
+        </button>
+        <button onClick={italic} className="button-edit-markdown">
+          Italic
+        </button>
+        <button onClick={first} className="button-edit-markdown">
+          1st Title
+        </button>
+        <button onClick={scnd} className="button-edit-markdown">
+          2nd Title
+        </button>
+        <button onClick={third} className="button-edit-markdown">
+          3rd Title
+        </button>
+        <button onClick={four} className="button-edit-markdown">
+          4th Title
+        </button>
+        <button onClick={five} className="button-edit-markdown">
+          5th Title
+        </button>
+        <button onClick={six} className="button-edit-markdown">
+          6th Title
+        </button>
+        <button onClick={link} className="button-edit-markdown">
+          Link
+        </button>
+        <button onClick={list} className="button-edit-markdown">
+          List
+        </button>
+        <button onClick={img} className="button-edit-markdown">
+          Img
+        </button>
+        <button onClick={barred} className="button-edit-markdown">
+          Barred
+        </button>
+        <button onClick={array} className="button-edit-markdown">
+          Array
+        </button>
+        <button onClick={lineBreak} className="button-edit-markdown">
+          LineBreak
+        </button>
+      </div>
+      <br />
       <div className="container">
         <textarea
           placeholder="Markdown..."

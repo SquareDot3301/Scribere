@@ -2,15 +2,12 @@ const { app, BrowserWindow } = require("electron");
 require("electron-remote");
 const path = require("path");
 const isDev = require("electron-is-dev");
-<<<<<<< HEAD
 const { autoUpdater } = require("electron-updater");
 const log = require("electron-log");
 
 autoUpdater.logger = log;
 autoUpdater.logger.transports.file.level = "info";
 log.info("App starting...");
-=======
->>>>>>> b4596b11ac548561e16b5c3d07ae43fab9144aa1
 
 function createWindow() {
   const win = new BrowserWindow({
