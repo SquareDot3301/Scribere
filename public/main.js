@@ -1,5 +1,6 @@
-const { app, BrowserWindow } = require("electron");
+const { app, BrowserWindow, autoUpdater, dialog } = require("electron");
 require("electron-remote");
+require("update-electron-app");
 const path = require("path");
 const isDev = require("electron-is-dev");
 const { autoUpdater } = require("electron-updater");
