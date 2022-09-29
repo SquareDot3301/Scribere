@@ -72,3 +72,8 @@ body {
   display: flex;
   justify-content: center;
 }
+.infos {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}

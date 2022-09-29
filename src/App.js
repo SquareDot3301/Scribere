@@ -1,8 +1,10 @@
 import MarkdownIt from "markdown-it";
 import FileSaver from "file-saver";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 
 function App() {
+  const inputRef = useRef(null);
+
   let [markdownText, setMarkDownText] = useState("");
 
   let [renderedHTML, setRenderedHTML] = useState("");
@@ -31,8 +33,36 @@ function App() {
     let blobFile = new Blob([markdownText], {
       type: "text",
     });
-
     FileSaver.saveAs(blobFile, fileName);
+  }
+  const handleClick = () => {
+    inputRef.current.click();
+  };
+  function getFile(event) {
+    const input = event.target;
+    if ("files" in input && input.files.length > 0) {
+      placeFileContent(
+        document.getElementById("content-target"),
+        input.files[0]
+      );
+    }
+  }
+
+  function placeFileContent(target, file) {
+    readFileContent(file)
+      .then((content) => {
+        target.value = content;
+      })
+      .catch((error) => console.log(error));
+  }
+
+  function readFileContent(file) {
+    const reader = new FileReader();
+    return new Promise((resolve, reject) => {
+      reader.onload = (event) => resolve(event.target.result);
+      reader.onerror = (error) => reject(error);
+      reader.readAsText(file);
+    });
   }
   function bold() {
     setMarkDownText("**Scribere**");
@@ -125,12 +155,20 @@ function App() {
         </button>
       </div>
       <br />
+      <div className="infos">
+        <p>
+          Letters : {markdownText.length} | Words :{" "}
+          {markdownText.split(" ").length} | Special Characters :{" "}
+          {markdownText.replace(/[a-zA-Z0-9 ]/g, "").length}
+        </p>
+      </div>
       <div className="container">
         <textarea
           placeholder="Markdown..."
           className="textarea"
           rows={20}
           value={markdownText}
+          id="content-target"
           onChange={handleTextInput}
         ></textarea>
         <div className="output">
@@ -157,6 +195,17 @@ function App() {
         </button>
         <button className="button" type="button" onClick={saveHTML}>
           Save HTML
+        </button>
+        <input
+          style={{ background: "transparent", display: "none" }}
+          ref={inputRef}
+          type="file"
+          id="input-file"
+          onChange={(event) => getFile(event)}
+          accept=".txt, .md"
+        />
+        <button className="button" onClick={handleClick}>
+          Open file
         </button>
       </div>
     </div>

@@ -11,8 +11,8 @@ log.info("App starting...");
 
 function createWindow() {
   const win = new BrowserWindow({
-    width: 900,
-    height: 700,
+    width: 1100,
+    height: 750,
     icon: "./logo.png",
     webPreferences: {
       enableRemoteModule: true,
